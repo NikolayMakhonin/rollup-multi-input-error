@@ -1,7 +1,5 @@
-'use strict';
-
 function func2() {
   return 'func2'
 }
 
-exports.func2 = func2;
+export { func2 as f };
