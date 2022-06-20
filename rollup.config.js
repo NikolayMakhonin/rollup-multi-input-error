@@ -1,4 +1,5 @@
 import commonjs from '@rollup/plugin-commonjs'
+import del from 'rollup-plugin-delete'
 
 export default {
   cache: false,
@@ -9,14 +10,9 @@ export default {
   output: {
     dir           : 'dist',
     format        : 'cjs',
-    exports       : 'named',
-    entryFileNames: '[name].js',
-    chunkFileNames: '[name].js',
-    // preserveModules: true,
-    // preserveModulesRoot: 'src',
-    // minifyInternalExports: true,
   },
   plugins: [
+    del({targets: 'dist'}),
     commonjs(),
   ],
 }
